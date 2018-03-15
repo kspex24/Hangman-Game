@@ -4,9 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Hangman</title>
+
+         <!--Link to reset stylesheet-->
+         <link rel="stylesheet" href="assets/css/reset.css">
+
+         <!-- Latest compiled and minified CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     
+     
+         <!--Link to my stylesheet-->
+         <link rel="stylesheet" href="assets/css/custom.css">
+
 </head>
 <body>
+
+    <div class="jumbotron">
+
+            <h1 class="text-center">Hangman for Baseball Fans</h1>
+        
+            <div class="text-center">
+
+            <p>Test your baseball terminology knowledge.  Press any letter to start.  12 strikes and you are out!</p>
+        </div>
+
+            <div class="row">
+                <div class="col-md-12" id="wordlanks"><h2 class="text-center">Guess a letter to complete the word.</h2><br><h2 class="text-center">Blanks go here</h2></div>
+
+            
+
+            <div class="row">
+                <div class="col-md-4"><h3 class="text-center">Letters Guessed: </h3></div>
+            
+                <div class="col-md-4"><h3 class="text-center"># of Guesses Left: </h3></div>
+
+                <div class="col-md-4"><h3 class="text-center"># of Wins: </h3></div>
+            </div>
+
+            <div class="row">
+                    <div class="col-md-4" id = "lettersGuessed"></div>
+                
+                    <div class="col-md-4" id="remGuess"></div>
     
-</body>
-</html>
+                    <div class="col-md-4" id="wins"></div>
+                </div>
+               
+           
+        
+            
+    <script type="text/javascript">
+
+    var remainingGuesses =  12;
+    
+    var wins = 0;
+
+    var wordList= [ "inning", "pitcher", "catcher", "homerun", "strike", "ball", "bat" ];
+
+    var word = wordList[Math.floor(Math.random() * wordList.length)];
+
+        console.log(word);
+        
+        function wordLength() {
+        var str = word;
+        var n = str.length;
+        console.log(n);
+        }
+
+wordLength();
+
+   
+
+    
+
+// This function is run whenever the user presses a key.
+// document.onkeyup = function(event) {
+
+// var userGuess = event.key;
+
+// Determines which key was pressed.
+
+ // Randomly chooses a word choice from the wordList array. This is the Computer's guess.
+//  var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+
+ 
+
+
+
+// <!--We start the game with a score of 0.
+// var score = 0;
+
+// var lettersGuessed = 0;
+// var remainingGuesses = 12;  (Total of 12 per game)
+
+// User presses any key to start   
+// Random pick a word from array  - function with loop
+// Count the number of characters in the string
+// Display Blanks for each character in the word on screen
+// User presses key - capture key stroke
+// Letter is compared to word 
+//     - if in word, display in blank(s), 
+//     - if not in word display in Letters guessed
+//     - subtract 1 from remaining Guesses
+//     - when remaining guesses = 0 , 
+//         if wins add one to win
+//             restart game automatically
+   
+
+
+
+    
+//         
+//         
+        
+    
+//    
+ </script>
+  </body>
+ </html>
