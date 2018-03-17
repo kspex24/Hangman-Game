@@ -4,10 +4,6 @@ body {
     color: #777777;
 }
 
-.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-     margin-left: 0px; 
-}
-
 .wrapper-content {
     border: solid 1px;
     border-color:#dddddd;
@@ -25,21 +21,10 @@ form {
     padding: 15px;
 }
 
-/* Change navbar-brand title color  to teal */
-.navbar-default .navbar-brand { 
-    color: white;
-    background-color: #4aaaa5;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding-right: 25px;
-    padding-left: 25px;
-}
-
 
 /* Change H2 header to teal */
 h2 { 
-    color: #4aaaa5;
+    color: blue;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-bottom: 30px;
     border-bottom: solid 3px;
@@ -53,28 +38,29 @@ h2 {
     height: 150px;
 }
 
-#textstyle {
-    font-size: 20px;
-}
-
-.textbox {
+#wins {
     text-align: center;
-    color: white;
-    font-size: 18px;
-    background-color: #4aaaa5;
-    padding: 5px;
-    width: 200px;
-    position: relative;
-    bottom: 40px;
-    z-index: 10;
+    font-size: 24px;
+    font-weight: bold;
+
 }
 
-.btn-default {
-    margin-top: 15px;
-    background: #4aaaa5; 
-    color: #ffffff;
-    font-size: 16px;
+#remGuess {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+
 }
+
+#wordBlanks {
+    text-align: center;
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 60px;  
+    margin-top: 60px;  
+
+}
+
 
 /* Style the footer of page */
 
