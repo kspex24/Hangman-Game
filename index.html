@@ -16,6 +16,10 @@
          <!--Link to my stylesheet-->
          <link rel="stylesheet" href="assets/css/custom.css">
 
+
+        <!--Link to my jquery-->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -49,30 +53,25 @@
     
                     <div class="col-md-4" id="wins"></div>
                 </div>
-               
-           
+                        
 
-            
-    <script type="text/javascript">
+ <script type="text/javascript">
 
 
-//Initialize screen and game
+//Initialize screen and game, reset variables to original values
 
-        // (document).ready(function () {
+//  $(document).ready(function () { 
 
- //  <!-- Define variables        -->
+ //  <!-- Define variables -->
 
-    var wordList = ["inning", "pitcher", "catcher", "homerun", "bat", "strike"];
-
-    // var randomWordArray = new Array;
-    // var lettersGuessedArray = new Array;
-    
+    var wordList = ["inning", "pitcher", "catcher", "homerun", "bat", "strike"]
     var remainingGuesses =  12;
-    var wins = 0;
-    var dispBlank = "_";
+    
+    var lettersGuessedArray = [];
 
-        document.getElementById("wordBlanks").innerHTML = wordBlanks;
+    var wins = 0;    
 
+//Display number of wins and remaining guesses
 
         document.getElementById("wins").innerHTML = wins;
 
@@ -80,19 +79,12 @@
         document.getElementById("remGuess").innerHTML = remainingGuesses;
 
 
-
-// <!-- 
-// // This function is run whenever the user presses a key.
-// document.onkeyup = function(event) {
-
-// // Determines which key was pressed.
-// var userGuess = event.key; -->
-
 //Generate a random word from the wordList array
 
     var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 
     console.log(randomWord);
+
 //Split word into characters
 
     var wordBlanks = randomWord.split("");
@@ -101,51 +93,52 @@
 
     // Display characters as blanks on screen
 
-    //   for (var i = 0; i < wordBlanks.length; i++) {
-    //         wordBlanks.push(" _ ");
-    //         dispBlank = (dispBlank + " _ ");
+      var dispBlanksArray = [];
+      
+      var dispBlanks = "";
 
-    //     };
+      for (var i = 0; i < randomWord.length; i++) {
+    
+           dispBlanks = dispBlanks + " _ ";   
+           dispBlanksArray.push("_"); 
+          
+        };
 
-    // function displayBlanks() {
+        console.log(dispBlanks);
 
-    //     for (var i = 0; i < wordBlanks.length; i++) {
-        
-    //     var noOfBlanks = wordBlanks.length;
+        document.getElementById("wordBlanks").innerHTML = dispBlanks;
 
-
-
-    //     console.log("_ " + wordBlanks[i]);
-    //   };
-
-// displayBlanks();
 
 
 //Calculate remaining letters
 
 
-//Calculate number of wins - do this is game startup?
-   
-//Display word blanks letter guessed and number of wins
+// // This function is run whenever the user presses a key.
+
+document.onkeyup = function(event) {  
+
+//  Determines which key was pressed.
+
+var userGuess = event.key.toLowerCase();
+
+   for (var j = 0; j < randomWord.length; j++) {
+
+       if (userGuess === wordBlanks[j])
+            
+        { (dispBlanks[j] = wordBlanks[j]);       
+            document.getElementById("wordBlanks").innerHTML = dispBlanks;
+            console.log(userGuess);
+         }  
+         
+        }
  
-document.getElementById("wordBlanks").innerHTML = wordBlanks;
+ 
 
-
-document.getElementById("wins").innerHTML = wins;
-
-
-document.getElementById("remGuess").innerHTML = remainingGuesses;
-
-
-
-// document.onkeyup = function(event) {
-
-// // Determines which key was pressed.
-// var userGuess = event.key;
-
-//Copmare userGuess to letters in Random Word string
+    
 
 // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
+
+
 // if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
 
 //   if ((userGuess === "r") && (computerGuess === "s")) {
@@ -164,33 +157,12 @@ document.getElementById("remGuess").innerHTML = remainingGuesses;
 //     ties++;
 //   }
 
-
         // wins ++
 
         // remainingGuesses --
-     
-
-    
-
-// This function is run whenever the user presses a key.
-// document.onkeyup = function(event) {
-
-// var userGuess = event.key;
-
-// Determines which key was pressed.
-
- // Randomly chooses a word choice from the wordList array. This is the Computer's guess.
-//  var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-
  
 
 
-
-// <!--We start the game with a score of 0.
-// var score = 0;
-
-// var lettersGuessed = 0;
-// var remainingGuesses = 12;  (Total of 12 per game)
 
 // User presses any key to start   
 // Random pick a word from array  - function with loop
@@ -205,18 +177,13 @@ document.getElementById("remGuess").innerHTML = remainingGuesses;
 //         if wins add one to win
 //             restart game automatically
    
-
-
-
-    
-//         
-//         
+       
         
     
-//   
-
+  
         // });
  
- </script>
-  </body>
- </html>
+
+        </script>
+    </body>
+</html>
