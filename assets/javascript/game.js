@@ -64,18 +64,43 @@
                                 console.log(correctGuesses);         
                             }
                             
-                            else {
-                                remainingGuesses--;
-                            }
                         };
                         
                     };
-            document.getElementById("wordBlanks").textContent = letterBlanks.join(" "); 
+                            
+                       
+
+                        // function wrongGuess () {
+
+                        //     // if (randomWord.indexOf(userGuess) > -1) {
+                        
+                        //     //     for (var j = 0; j < randomWord.length; j++) {
+        
+                        //     //         if (randomWord[j] != userGuess) {
+                                        var wrong = userGuess
+                                        remainingGuesses--;
+                                        wrongLetters.push(wrong);
+                        //                 console.log(wrongLetters)
+                        //         }  
+                        //  }
+
+                        // // };
+
+    
+                        // wrongGuess();                   
+        
+           
+                        document.getElementById("wordBlanks").textContent = letterBlanks.join(" ");    
+
+            document.getElementById("lettersGuessed").textContent = wrongLetters.join(" , ");
+
+            document.getElementById("remGuess").textContent = remainingGuesses; 
+
+             }
 
 
-            }
 
-
+        //    else if (correctGuesses === randomWord.length)
     // function gameOverCheck() {
                     
     //     if (remainingGuesses < 1) {
