@@ -18,7 +18,7 @@
 
 
         <!--Link to my jquery-->
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> 
 
 </head>
 <body>
@@ -29,7 +29,7 @@
         
             <div class="text-center">
 
-            <p>Test your baseball terminology knowledge.  Press any letter to start.  12 strikes and you are out!</p>
+            <p>Test your baseball terminology knowledge.  Press any key to get started!  12 strikes and you are out!</p>
         </div>
 
             <div class="row">
@@ -47,7 +47,7 @@
             </div>
 
             <div class="row">
-                    <div class="col-md-4" id = "lettersGuessed"></div>
+                    <div class="col-md-4" id="lettersGuessed"></div>
                 
                     <div class="col-md-4" id="remGuess"></div>
     
@@ -55,135 +55,7 @@
                 </div>
                         
 
- <script type="text/javascript">
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 
-
-//Initialize screen and game, reset variables to original values
-
-//  $(document).ready(function () { 
-
- //  <!-- Define variables -->
-
-    var wordList = ["inning", "pitcher", "catcher", "homerun", "bat", "strike"]
-    var remainingGuesses =  12;
-    
-    var lettersGuessedArray = [];
-
-    var wins = 0;    
-
-//Display number of wins and remaining guesses
-
-        document.getElementById("wins").innerHTML = wins;
-
-
-        document.getElementById("remGuess").innerHTML = remainingGuesses;
-
-
-//Generate a random word from the wordList array
-
-    var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-
-    console.log(randomWord);
-
-//Split word into characters
-
-    var wordBlanks = randomWord.split("");
-
-    console.log(wordBlanks);
-
-    // Display characters as blanks on screen
-
-      var dispBlanksArray = [];
-      
-      var dispBlanks = "";
-
-      for (var i = 0; i < randomWord.length; i++) {
-    
-           dispBlanks = dispBlanks + " _ ";   
-           dispBlanksArray.push("_"); 
-          
-        };
-
-        console.log(dispBlanks);
-
-        document.getElementById("wordBlanks").innerHTML = dispBlanks;
-
-
-
-//Calculate remaining letters
-
-
-// // This function is run whenever the user presses a key.
-
-document.onkeyup = function(event) {  
-
-//  Determines which key was pressed.
-
-var userGuess = event.key.toLowerCase();
-
-   for (var j = 0; j < randomWord.length; j++) {
-
-       if (userGuess === wordBlanks[j])
-            
-        { (dispBlanks[j] = wordBlanks[j]);       
-            document.getElementById("wordBlanks").innerHTML = dispBlanks;
-            console.log(userGuess);
-         }  
-         
-        }
- 
- 
-
-    
-
-// This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
-
-
-// if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
-
-//   if ((userGuess === "r") && (computerGuess === "s")) {
-//     wins++;
-//   } else if ((userGuess === "r") && (computerGuess === "p")) {
-//     losses++;
-//   } else if ((userGuess === "s") && (computerGuess === "r")) {
-//     losses++;
-//   } else if ((userGuess === "s") && (computerGuess === "p")) {
-//     wins++;
-//   } else if ((userGuess === "p") && (computerGuess === "r")) {
-//     wins++;
-//   } else if ((userGuess === "p") && (computerGuess === "s")) {
-//     losses++;
-//   } else if (userGuess === computerGuess) {
-//     ties++;
-//   }
-
-        // wins ++
-
-        // remainingGuesses --
- 
-
-
-
-// User presses any key to start   
-// Random pick a word from array  - function with loop
-// Count the number of characters in the string
-// Display Blanks for each character in the word on screen
-// User presses key - capture key stroke
-// Letter is compared to word 
-//     - if in word, display in blank(s), 
-//     - if not in word display in Letters guessed
-//     - subtract 1 from remaining Guesses
-//     - when remaining guesses = 0 , 
-//         if wins add one to win
-//             restart game automatically
-   
-       
-        
-    
-  
-        // });
- 
-
-        </script>
     </body>
 </html>

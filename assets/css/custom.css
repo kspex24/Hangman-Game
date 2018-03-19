@@ -12,6 +12,11 @@ body {
     margin-bottom: 20px;
 }
 
+.jumbotron {
+    background-color: royalblue;
+    color: black;
+}
+
 form {
     margin-bottom: 20px;
 }
