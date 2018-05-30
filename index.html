@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <title>Hangman</title>
 
          <!--Link to reset stylesheet-->
@@ -22,46 +23,40 @@
 
 </head>
 <body>
-
+    <div class="bg"></div>
     <div class="jumbotron">
-
             <h1 class="text-center">Hangman for Baseball Fans</h1>
-        
-            <div class="text-center">
+            <p class="text-center">Test your baseball terminology knowledge.  Guess a letter to get started!  12 strikes and you are out!</p>
+                <span class="text-center"><h3  id="score"># of Wins: </h3> 
+                <h3  id="wins"></h3>          
+                <h3  id="score"># of Losses: </h3> 
+                <h3  id="losses"></h3> </span>
+            </div>  
 
-            <p>Test your baseball terminology knowledge.  Guess a letter to get started!  12 strikes and you are out!</p>
+        <div class="row">
+            <div class="col-md-12" id="outcome"><h2 class="text-center"></h2></div>
         </div>
 
-            <div class="row">
-                <div class="col-md-12" id="wordBlanks"><h2 class="text-center"></div>
-                    <br>
+        <div class="row">
+            <div class="col-md-12" id="wordBlanks"><h2 class="text-center"></h2></div>
+        </div>
 
-            
-
-            <div class="row">
+        <div class="row">
                 <div class="col-md-12"><h3 class="text-center">Letters Guessed: </h3></div>
+        </div>   
 
-            </div>   
-
-            <div class="row">
+        <div class="row">
                 <div class="col-md-12" id="lettersGuessed"></div>
-            </div>
+        </div>
             
-            <div class="row">   
-                <div class="col-md-12"><h3 class="text-center"># of Guesses Left: </h3></div>
-            </div>
+        <div class="row">   
+            <div class="col-md-12"><h3 class="text-center"># of Guesses Left: </h3></div>
+        </div>
 
-            <div class="row">
-                <div class="col-md-12" id="remGuess"></div>
-            </div>
-
-            <div class="row"></div>
-                <div class="col-md-12"><h3 class="text-center"># of Wins: </h3></div>
-            </div>
-
-            <div class="row"></div>
-                    <div class="col-md-12" id="wins"></div>
-            </div>
+        <div class="row">
+            <div class="col-md-12" id="remGuess"></div>
+        </div>
+     
                         
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>
